@@ -1,3 +1,7 @@
+### Principio Abierto/Cerrado
+**Teoría:** Las entidades deben estar abiertas para extensión pero cerradas para modificación.
+**Ejemplo MALO:**
+PB
 event CalcularDescuento( as_tipo String, ac_precio )
 
 dec{3} lc_Descuento
@@ -13,7 +17,8 @@ end if
 return lc_Descuento
 ----------------------------------------
 -----------------------------------------
------------------------------------------
+--**Ejemplo BUENO:**
+PB---------------------------------------
 
 event CalcularDescuento( as_tipo String, ac_precio )
 
@@ -47,5 +52,6 @@ wf_vip( ac_precio )
 Dec{3} lc_desc
 
 lc_lc_desc = ac_precio*0.5
+
 
 Return lc_desc
