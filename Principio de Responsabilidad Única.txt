@@ -1,3 +1,6 @@
+### Principio de Responsabilidad Única
+**Teoría:** Una clase debe tener una única razón para cambiar, es decir, una sola responsabilidad.
+**Ejemplo MALO:**
 class Cliente { 
        private String nombre;
        private String cuentabanco; 
@@ -15,6 +18,9 @@ class Cliente {
       }
  }
 
+**Ejemplo BUENO:**
+
+java
 class Cliente 
 { private String nombre; 
    private String CuentaBanco; 
@@ -34,4 +40,5 @@ class ReporteLineacredito {
          public void generar(Usuario usuario) 
         { // Lógica de reportes } 
 }
+
 
