@@ -1,0 +1,51 @@
+event CalcularDescuento( as_tipo String, ac_precio )
+
+dec{3} lc_Descuento
+
+if as_tipo = 'ESTUDIANTE' THEN
+	lc_Descuento = ac_precio*0.8
+elseif as_tipo = 'SENIOR' THEN
+	lc_Descuento = ac_precio*0.7
+elseif as_tipo = 'VIP' THEN
+	lc_Descuento = ac_precio*0.5
+end if
+
+return lc_Descuento
+----------------------------------------
+-----------------------------------------
+-----------------------------------------
+
+event CalcularDescuento( as_tipo String, ac_precio )
+
+dec lc_Descuento{3}
+
+if as_tipo = 'ESTUDIANTE' THEN
+	lc_Descuento = wf_estudiante( ac_precio )
+elseif as_tipo = 'SENIOR' THEN
+	lc_Descuento = wf_senior( ac_precio )
+elseif as_tipo = 'VIP' THEN
+	lc_Descuento =wf_vip( ac_precio )
+end if
+
+return lc_Descuento
+-------------------------------
+wf_estudiante( ac_precio )
+Dec{3} lc_desc
+
+lc_lc_desc = ac_precio*0.8
+
+Return lc_desc
+------------------------------
+wf_senior( ac_precio )
+Dec{3} lc_desc
+
+lc_lc_desc = ac_precio*0.7
+
+Return lc_desc
+--------------------------
+wf_vip( ac_precio )
+Dec{3} lc_desc
+
+lc_lc_desc = ac_precio*0.5
+
+Return lc_desc
